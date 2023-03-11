@@ -3,6 +3,7 @@
 
    # jupyterlab boiler plate setup
    import pyvista
+
    pyvista.set_plot_theme('document')
    pyvista.set_jupyter_backend('pythreejs')
    pyvista.global_theme.window_size = [600, 400]
@@ -33,6 +34,7 @@ variable spacing in the three coordinate directions.
    :hide-code:
 
    from pyvista import demos
+
    demos.plot_datasets('RectilinearGrid')
 
 
@@ -43,6 +45,7 @@ uniform spacing in the three coordinate directions.
    :hide-code:
 
    from pyvista import demos
+
    demos.plot_datasets('UniformGrid')
 
 

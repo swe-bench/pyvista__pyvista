@@ -77,6 +77,7 @@ might want to use PyVista:
 
    # Configure for panel
    import pyvista
+
    pyvista.set_jupyter_backend('panel')
    pyvista.global_theme.background = 'white'
    pyvista.global_theme.window_size = [600, 400]
@@ -92,6 +93,7 @@ Download the surface elevation map of Mount St. Helens and plot it.
 .. jupyter-execute::
 
     from pyvista import examples
+
     mesh = examples.download_st_helens()
     warped = mesh.warp_by_scalar('Elevation')
     surf = warped.extract_surface().triangulate()
@@ -106,6 +108,7 @@ Plot the 'X' component of elastic stress of a 3D notch specimen.
 .. jupyter-execute::
 
    from pyvista import examples
+
    mesh = examples.download_notch_stress()
    mesh.plot(scalars='Nodal Stress', component=0, cmap='turbo', cpos='xy')
 
@@ -161,12 +164,14 @@ Subtract a sphere from a cube mesh.
     import pyvista
     import numpy as np
 
+
     def make_cube():
         x = np.linspace(-0.5, 0.5, 25)
         grid = pyvista.StructuredGrid(*np.meshgrid(x, x, x))
         surf = grid.extract_surface().triangulate()
         surf.flip_normals()
         return surf
+
 
     # Create example PolyData meshes for boolean operations
     sphere = pyvista.Sphere(radius=0.65, center=(0, 0, 0))
@@ -187,6 +192,7 @@ Plot the :math:`3d_{xy}` orbital of a hydrogen atom.
 .. jupyter-execute::
 
     from pyvista import examples
+
     grid = examples.load_hydrogen_orbital(3, 2, -2)
     grid.plot(volume=True, opacity=[1, 0, 1], cmap='magma')
 

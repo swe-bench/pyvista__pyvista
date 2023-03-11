@@ -24,6 +24,7 @@ within JupyterLab:
 .. code:: python
 
     import pyvista as pv
+
     sphere = pv.Sphere()
 
     # short example
@@ -39,6 +40,7 @@ For convenience, you can enable ``ipyvtklink`` by default with:
 .. code:: python
 
     import pyvista
+
     pyvista.set_jupyter_backend('ipyvtklink')
 
 

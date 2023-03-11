@@ -18,6 +18,7 @@ Create interactive physically based rendering using `pythreejs`_.
    :hide-code:
 
    import pyvista
+
    pyvista.global_theme.background = 'white'
    pyvista.global_theme.anti_aliasing = 'fxaa'
    pyvista.global_theme.window_size = [600, 600]
@@ -29,8 +30,9 @@ Create interactive physically based rendering using `pythreejs`_.
 
    # download an example and display it using physically based rendering.
    mesh = examples.download_lucy()
-   mesh.plot(color='lightgrey', pbr=True, metallic=0.2,
-             jupyter_backend='pythreejs')
+   mesh.plot(
+       color='lightgrey', pbr=True, metallic=0.2, jupyter_backend='pythreejs'
+   )
 
 
 Demo Using ``ipygany``
@@ -58,6 +60,7 @@ Demo Using ``panel``
 .. jupyter-execute::
 
    from pyvista import demos
+
    demos.plot_logo(jupyter_backend='panel')
 
 
@@ -157,6 +160,7 @@ either :func:`Plotter.show() <pyvista.Plotter.show>` or :func:`dataset.plot()
 .. code:: python
 
    import pyvista as pv
+
    pv.set_jupyter_backend('trame')
 
 .. autofunction:: pyvista.set_jupyter_backend

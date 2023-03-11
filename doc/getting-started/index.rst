@@ -124,6 +124,7 @@ through a range of examples and tutorials.
       .. code:: python
 
          import pyvista
+
          mesh = pyvista.read('bunny.stl')
          mesh.plot()
 

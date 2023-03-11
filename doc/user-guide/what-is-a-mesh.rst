@@ -44,6 +44,7 @@ You can create one by defining a 2D array of Cartesian coordinates like so:
 
    # must have this here as our global backend may not be static
    import pyvista
+
    pyvista.set_plot_theme('document')
    pyvista.set_jupyter_backend('pythreejs')
    pyvista.global_theme.window_size = [600, 400]
@@ -69,14 +70,11 @@ connectivity between points such as this gridded mesh:
     from pyvista import examples
 
     mesh = examples.load_hexbeam()
-    cpos = [(6.20, 3.00, 7.50),
-            (0.16, 0.13, 2.65),
-            (-0.28, 0.94, -0.21)]
+    cpos = [(6.20, 3.00, 7.50), (0.16, 0.13, 2.65), (-0.28, 0.94, -0.21)]
 
     pl = pv.Plotter()
     pl.add_mesh(mesh, show_edges=True, color='white')
-    pl.add_points(mesh.points, color='red',
-                  point_size=20)
+    pl.add_points(mesh.points, color='red', point_size=20)
     pl.camera_position = cpos
     pl.show()
 
@@ -88,11 +86,12 @@ Or this triangulated surface:
 
     pl = pv.Plotter()
     pl.add_mesh(mesh, show_edges=True, color='white')
-    pl.add_points(mesh.points, color='red',
-                  point_size=2)
-    pl.camera_position = [(0.02, 0.30, 0.73),
-                          (0.02, 0.03, -0.022),
-                          (-0.03, 0.94, -0.34)]
+    pl.add_points(mesh.points, color='red', point_size=2)
+    pl.camera_position = [
+        (0.02, 0.30, 0.73),
+        (0.02, 0.03, -0.022),
+        (-0.03, 0.94, -0.34),
+    ]
     pl.show()
 
 
@@ -114,12 +113,15 @@ between eight points in that mesh:
     pl.add_points(mesh.points, color='red', point_size=20)
 
     single_cell = mesh.extract_cells(mesh.n_cells - 1)
-    pl.add_mesh(single_cell, color='pink', edge_color='blue',
-                line_width=5, show_edges=True)
+    pl.add_mesh(
+        single_cell, color='pink', edge_color='blue', line_width=5, show_edges=True
+    )
 
-    pl.camera_position = [(6.20, 3.00, 7.50),
-                          (0.16, 0.13, 2.65),
-                          (-0.28, 0.94, -0.21)]
+    pl.camera_position = [
+        (6.20, 3.00, 7.50),
+        (0.16, 0.13, 2.65),
+        (-0.28, 0.94, -0.21),
+    ]
     pl.show()
 
 
